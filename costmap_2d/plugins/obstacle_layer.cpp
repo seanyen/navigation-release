@@ -224,6 +224,7 @@ void ObstacleLayer::onInitialize()
 
   }
 
+  dsrv_ = NULL;
   setupDynamicReconfigure(nh);
   footprint_layer_.initialize( layered_costmap_, name_ + "_footprint", tf_);
 }
@@ -418,10 +419,16 @@ void ObstacleLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, i
   // before we merge this obstacle layer into the master_grid.
   footprint_layer_.updateCosts(*this, min_i, min_j, max_i, max_j);
 
-  if(combination_method_==0)
-    updateWithOverwrite(master_grid, min_i, min_j, max_i, max_j);
-  else
-    updateWithMax(master_grid, min_i, min_j, max_i, max_j);
+  switch(combination_method_){
+    case 0: // Overwrite
+      updateWithOverwrite(master_grid, min_i, min_j, max_i, max_j);
+      break;
+    case 1: // Maximum
+      updateWithMax(master_grid, min_i, min_j, max_i, max_j);
+      break;
+    default: // Nothing
+      break;
+  }
 }
 
 void ObstacleLayer::addStaticObservation(costmap_2d::Observation& obs, bool marking, bool clearing)

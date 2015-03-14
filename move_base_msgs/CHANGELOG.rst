@@ -2,6 +2,11 @@
 Changelog for package move_base_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.1 (2015-03-14)
+-------------------
+* Remove unused dependencies in move_base_msgs
+* Contributors: Daniel Stonier
+
 1.12.0 (2015-02-04)
 -------------------
 * update maintainer email

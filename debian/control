@@ -1,0 +1,12 @@
+Source: ros-jade-fake-localization
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-jade-angles, ros-jade-catkin, ros-jade-geometry-msgs, ros-jade-message-filters, ros-jade-nav-msgs, ros-jade-rosconsole, ros-jade-roscpp, ros-jade-rospy, ros-jade-tf
+Homepage: http://wiki.ros.org/fake_localization
+Standards-Version: 3.9.2
+
+Package: ros-jade-fake-localization
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jade-geometry-msgs, ros-jade-message-filters, ros-jade-nav-msgs, ros-jade-rosconsole, ros-jade-roscpp, ros-jade-rospy, ros-jade-tf
+Description: A ROS node that simply forwards odometry information.

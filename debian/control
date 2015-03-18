@@ -1,0 +1,12 @@
+Source: ros-jade-carrot-planner
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-jade-base-local-planner, ros-jade-catkin, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Homepage: http://wiki.ros.org/carrot_planner
+Standards-Version: 3.9.2
+
+Package: ros-jade-carrot-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-jade-base-local-planner, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Description: This planner attempts to find a legal place to put a carrot for the robot to follow. It does this by moving back along the vector between the robot and the goal point.

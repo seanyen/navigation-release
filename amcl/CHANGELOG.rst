@@ -2,10 +2,10 @@
 Changelog for package amcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.1 (2015-03-14)
+1.13.0 (2015-03-17)
 -------------------
 * amcl_node will now save latest pose on shutdown
-* Contributors: iandanforth
+* Contributors: Ian Danforth
 
 1.12.0 (2015-02-04)
 -------------------

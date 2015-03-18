@@ -1,0 +1,12 @@
+Source: ros-jade-global-planner
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-jade-catkin, ros-jade-costmap-2d, ros-jade-dynamic-reconfigure, ros-jade-geometry-msgs, ros-jade-nav-core, ros-jade-nav-msgs, ros-jade-navfn, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Homepage: http://wiki.ros.org/global_planner
+Standards-Version: 3.9.2
+
+Package: ros-jade-global-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jade-costmap-2d, ros-jade-dynamic-reconfigure, ros-jade-geometry-msgs, ros-jade-nav-core, ros-jade-nav-msgs, ros-jade-navfn, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Description: A path planner library and node.

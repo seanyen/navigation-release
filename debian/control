@@ -1,0 +1,12 @@
+Source: ros-jade-clear-costmap-recovery
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-jade-catkin, ros-jade-cmake-modules, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Homepage: http://wiki.ros.org/clear_costmap_recovery
+Standards-Version: 3.9.2
+
+Package: ros-jade-clear-costmap-recovery
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Description: This package provides a recovery behavior for the navigation stack that attempts to clear space by reverting the costmaps used by the navigation stack to the static map outside of a given area.

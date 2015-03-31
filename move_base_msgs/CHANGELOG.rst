@@ -2,6 +2,9 @@
 Changelog for package move_base_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.2 (2015-03-31)
+-------------------
+
 1.12.1 (2015-03-14)
 -------------------
 * Remove unused dependencies in move_base_msgs

@@ -2,7 +2,10 @@
 Changelog for package move_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.0 (2015-03-17)
+1.12.2 (2015-03-31)
+-------------------
+
+1.12.1 (2015-03-14)
 -------------------
 * Fixing various memory freeing operations
 * Contributors: Alex Bencz

@@ -2,7 +2,10 @@
 Changelog for package dwa_local_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.0 (2015-03-17)
+1.12.2 (2015-03-31)
+-------------------
+
+1.12.1 (2015-03-14)
 -------------------
 * link only libraries found with find_package
 * Contributors: Lukas Bulwahn

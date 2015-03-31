@@ -2,10 +2,11 @@
 Changelog for package map_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.0 (2015-03-17)
+1.12.2 (2015-03-31)
 -------------------
-* rename image_loader library, fixes `#208 <https://github.com/ros-planning/navigation/issues/208>`_
-* Contributors: Michael Ferguson
+
+1.12.1 (2015-03-14)
+-------------------
 
 1.12.0 (2015-02-04)
 -------------------

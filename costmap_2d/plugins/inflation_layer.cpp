@@ -55,9 +55,6 @@ InflationLayer::InflationLayer()
   , cell_inflation_radius_(0)
   , cached_cell_inflation_radius_(0)
   , dsrv_(NULL)
-  , seen_(NULL)
-  , cached_costs_(NULL)
-  , cached_distances_(NULL)
 {
   access_ = new boost::shared_mutex();
 }
@@ -68,10 +65,7 @@ void InflationLayer::onInitialize()
     boost::unique_lock < boost::shared_mutex > lock(*access_);
     ros::NodeHandle nh("~/" + name_), g_nh;
     current_ = true;
-    if (seen_)
-      delete[] seen_;
     seen_ = NULL;
-    seen_size_ = 0;
     need_reinflation_ = false;
 
     dynamic_reconfigure::Server<costmap_2d::InflationPluginConfig>::CallbackType cb = boost::bind(
@@ -119,9 +113,8 @@ void InflationLayer::matchSize()
 
   unsigned int size_x = costmap->getSizeInCellsX(), size_y = costmap->getSizeInCellsY();
   if (seen_)
-    delete[] seen_;
-  seen_size_ = size_x * size_y;
-  seen_ = new bool[seen_size_];
+    delete seen_;
+  seen_ = new bool[size_x * size_y];
 }
 
 void InflationLayer::updateBounds(double robot_x, double robot_y, double robot_yaw, double* min_x,
@@ -164,18 +157,6 @@ void InflationLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, 
   unsigned char* master_array = master_grid.getCharMap();
   unsigned int size_x = master_grid.getSizeInCellsX(), size_y = master_grid.getSizeInCellsY();
 
-  if (seen_ == NULL) {
-    ROS_WARN("InflationLayer::updateCosts(): seen_ array is NULL");
-    seen_size_ = size_x * size_y;
-    seen_ = new bool[seen_size_];
-  }
-  else if (seen_size_ != size_x * size_y)
-  {
-    ROS_WARN("InflationLayer::updateCosts(): seen_ array size is wrong");
-    delete[] seen_;
-    seen_size_ = size_x * size_y;
-    seen_ = new bool[seen_size_];
-  }
   memset(seen_, false, size_x * size_y * sizeof(bool));
 
   // We need to include in the inflation cells outside the bounding
@@ -229,7 +210,6 @@ void InflationLayer::updateCosts(costmap_2d::Costmap2D& master_grid, int min_i, 
     if (my < size_y - 1)
       enqueue(master_array, index + size_x, mx, my + 1, sx, sy);
   }
-
 }
 
 /**
@@ -278,7 +258,8 @@ void InflationLayer::computeCaches()
   //based on the inflation radius... compute distance and cost caches
   if(cell_inflation_radius_ != cached_cell_inflation_radius_)
   {
-    deleteKernels();
+    if(cached_cell_inflation_radius_ > 0)
+      deleteKernels();
 
     cached_costs_ = new unsigned char*[cell_inflation_radius_ + 2];
     cached_distances_ = new double*[cell_inflation_radius_ + 2];
@@ -311,23 +292,18 @@ void InflationLayer::deleteKernels()
   {
     for (unsigned int i = 0; i <= cached_cell_inflation_radius_ + 1; ++i)
     {
-      if (cached_distances_[i])
-        delete[] cached_distances_[i];
+      delete[] cached_distances_[i];
     }
-    if (cached_distances_)
-      delete[] cached_distances_;
-    cached_distances_ = NULL;
+    delete[] cached_distances_;
   }
 
   if (cached_costs_ != NULL)
   {
     for (unsigned int i = 0; i <= cached_cell_inflation_radius_ + 1; ++i)
     {
-      if (cached_costs_[i])
-        delete[] cached_costs_[i];
+      delete[] cached_costs_[i];
     }
     delete[] cached_costs_;
-    cached_costs_ = NULL;
   }
 }
 

@@ -182,7 +182,6 @@ private:
   double resolution_;
 
   bool* seen_;
-  int seen_size_;
 
   unsigned char** cached_costs_;
   double** cached_distances_;

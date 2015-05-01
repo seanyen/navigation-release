@@ -80,7 +80,6 @@ private:
   unsigned char interpretValue(unsigned char value);
 
   std::string global_frame_; ///< @brief The global frame for the costmap
-  std::string map_frame_;  /// @brief frame that map is located in
   bool subscribe_to_updates_;
   bool map_received_;
   bool has_updated_data_;
@@ -92,6 +91,7 @@ private:
 
   unsigned char lethal_threshold_, unknown_cost_value_;
 
+  mutable boost::recursive_mutex lock_;
   dynamic_reconfigure::Server<costmap_2d::GenericPluginConfig> *dsrv_;
 };
 

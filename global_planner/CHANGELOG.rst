@@ -2,22 +2,12 @@
 Changelog for package global_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.3 (2015-04-30)
--------------------
-
-1.12.2 (2015-03-31)
--------------------
-
-1.12.1 (2015-03-14)
--------------------
-* Fixing various memory freeing operations
-* Add Orientation Filter to Global Planner
-* Contributors: Alex Bencz, David V. Lu!!, James Servos, Michael Ferguson
-
-1.12.0 (2015-02-04)
--------------------
+1.11.16 (2015-04-30)
+--------------------
 * update maintainer email
-* Contributors: Michael Ferguson
+* Fix gradient path edge case
+* Use euclidean distance for heuristic
+* Contributors: David V. Lu!!, Michael Ferguson
 
 1.11.15 (2015-02-03)
 --------------------

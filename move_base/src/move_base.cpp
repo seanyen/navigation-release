@@ -494,8 +494,6 @@ namespace move_base {
     planner_thread_->interrupt();
     planner_thread_->join();
 
-    delete planner_thread_;
-
     delete planner_plan_;
     delete latest_plan_;
     delete controller_plan_;
@@ -505,7 +503,7 @@ namespace move_base {
   }
 
   bool MoveBase::makePlan(const geometry_msgs::PoseStamped& goal, std::vector<geometry_msgs::PoseStamped>& plan){
-    boost::unique_lock<costmap_2d::Costmap2D::mutex_t> lock(*(planner_costmap_ros_->getCostmap()->getMutex()));
+    boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_ros_->getCostmap()->getLock()));
 
     //make sure to set the plan to be empty initially
     plan.clear();
@@ -934,7 +932,7 @@ namespace move_base {
         }
         
         {
-         boost::unique_lock<costmap_2d::Costmap2D::mutex_t> lock(*(controller_costmap_ros_->getCostmap()->getMutex()));
+         boost::unique_lock< boost::shared_mutex > lock(*(controller_costmap_ros_->getCostmap()->getLock()));
         
         if(tc_->computeVelocityCommands(cmd_vel)){
           ROS_DEBUG_NAMED( "move_base", "Got a valid command from the local planner: %.3lf, %.3lf, %.3lf",

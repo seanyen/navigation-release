@@ -2,6 +2,11 @@
 Changelog for package robot_pose_ekf
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.11.16 (2015-04-30)
+--------------------
+* update maintainer email
+* Contributors: Michael Ferguson
+
 1.11.15 (2015-02-03)
 --------------------
 * Fix bfl includes in robot_pose_ekf

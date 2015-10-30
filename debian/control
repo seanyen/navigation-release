@@ -1,0 +1,12 @@
+Source: ros-jade-navfn
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libnetpbm10-dev, ros-jade-catkin (>= 0.5.68), ros-jade-cmake-modules, ros-jade-costmap-2d, ros-jade-geometry-msgs, ros-jade-nav-core, ros-jade-nav-msgs, ros-jade-pcl-conversions, ros-jade-pcl-ros, ros-jade-pluginlib, ros-jade-rosconsole, ros-jade-roscpp, ros-jade-tf, ros-jade-visualization-msgs
+Homepage: http://wiki.ros.org/navfn
+Standards-Version: 3.9.2
+
+Package: ros-jade-navfn
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-jade-costmap-2d, ros-jade-geometry-msgs, ros-jade-nav-core, ros-jade-nav-msgs, ros-jade-pcl-conversions, ros-jade-pcl-ros, ros-jade-pluginlib, ros-jade-rosconsole, ros-jade-roscpp, ros-jade-tf, ros-jade-visualization-msgs
+Description: navfn provides a fast interpolated navigation function that can be used to create plans for a mobile base. The planner assumes a circular robot and operates on a costmap to find a minimum cost plan from a start point to an end point in a grid. The navigation function is computed with Dijkstra's algorithm, but support for an A* heuristic may also be added in the near future. navfn also provides a ROS wrapper for the navfn planner that adheres to the nav_core::BaseGlobalPlanner interface specified in nav_core.

@@ -2,6 +2,11 @@
 Changelog for package clear_costmap_recovery
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.13.1 (2015-10-29)
+-------------------
+* proper locking during costmap update
+* Contributors: Michael Ferguson
+
 1.13.0 (2015-03-17)
 -------------------
 

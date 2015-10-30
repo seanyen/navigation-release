@@ -2,6 +2,12 @@
 Changelog for package amcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.13.1 (2015-10-29)
+-------------------
+* adds the set_map service to amcl
+* fix pthread_mutex_lock on shutdown
+* Contributors: Michael Ferguson, Stephan Wirth
+
 1.13.0 (2015-03-17)
 -------------------
 * amcl_node will now save latest pose on shutdown

@@ -2,6 +2,9 @@
 Changelog for package navfn
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.5 (2015-10-29)
+-------------------
+
 1.12.4 (2015-06-03)
 -------------------
 * Fix for `#337 <https://github.com/mikeferguson/navigation/issues/337>`_

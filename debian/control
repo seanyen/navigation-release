@@ -1,0 +1,12 @@
+Source: ros-jade-rotate-recovery
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-jade-base-local-planner, ros-jade-catkin, ros-jade-cmake-modules, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Homepage: http://wiki.ros.org/rotate_recovery
+Standards-Version: 3.9.2
+
+Package: ros-jade-rotate-recovery
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-jade-costmap-2d, ros-jade-nav-core, ros-jade-pluginlib, ros-jade-roscpp, ros-jade-tf
+Description: This package provides a recovery behavior for the navigation stack that attempts to clear space by performing a 360 degree rotation of the robot.

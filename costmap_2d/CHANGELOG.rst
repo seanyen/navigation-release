@@ -2,30 +2,45 @@
 Changelog for package costmap_2d
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.1 (2015-10-29)
+1.12.6 (2016-01-02)
 -------------------
-* Remove excessive canTransform spam.
+* Fix deadlock when using multiple static layers in a single program.
+* Contributors: Alex Henning
+
+1.12.5 (2015-10-29)
+-------------------
+* Remove canTransform spam.
 * Fix for `#382 <https://github.com/ros-planning/navigation/issues/382>`_
 * Republish costmap if origin changes
-* Remove Footprint Layer
 * Remove extra sign definition and use proper one when padding footprint
+* Remove Footprint Layer
 * fix plugin warnings on throw, closes `#205 <https://github.com/ros-planning/navigation/issues/205>`_
 * initialize publisher variables
-* Look for robot_radius when footprint is not set. `#206 <https://github.com/ros-planning/navigation/issues/206>`_
+* Contributors: Daniel Stonier, David Lu, Michael Ferguson
+
+1.12.4 (2015-06-03)
+-------------------
+* Look for robot_radius when footprint is not set. `#206 <https://github.com/mikeferguson/navigation/issues/206>`_
 * Add a first_map_only parameter so we keep reusing the first received static map
-* Merge pull request `#331 <https://github.com/ros-planning/navigation/issues/331>`_ from mikeferguson/static_layer_any_frame
+* Contributors: Jihoon Lee, Patrick Chin
+
+1.12.3 (2015-04-30)
+-------------------
 * support rolling static map in any frame
 * fix destructor of Costmap2D
 * proper locking during costmap update
-* do not resize static map when rolling
-* Static layer works with rolling window now
-* Contributors: Daniel Stonier, David Lu, Jihoon Lee, Michael Ferguson, Rein Appeldoorn, commaster90
+* Contributors: Michael Ferguson
 
-1.13.0 (2015-03-17)
+1.12.2 (2015-03-31)
+-------------------
+* Static layer works with rolling window now
+* Contributors: Michael Ferguson, Rein Appeldoorn
+
+1.12.1 (2015-03-14)
 -------------------
 * fixed issue with voxel_layer and obstacle_layer both deleting the same dynamic_reconfigure::Server and causing segfaults
 * Fixing various memory freeing operations
-* static_layer: Fix indexing error in OccupancyGridUpdate callback function.
+* Fix indexing error in OccupancyGridUpdate callback function.
 * Contributors: Alex Bencz, David V. Lu!!, James Servos, Julse, Kaijen Hsiao
 
 1.12.0 (2015-02-04)

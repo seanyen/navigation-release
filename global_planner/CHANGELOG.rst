@@ -2,6 +2,9 @@
 Changelog for package global_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.6 (2016-01-02)
+-------------------
+
 1.12.5 (2015-10-29)
 -------------------
 * Add missing angles dependecy

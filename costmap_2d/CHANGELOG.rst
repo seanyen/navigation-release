@@ -2,6 +2,11 @@
 Changelog for package costmap_2d
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.7 (2016-01-05)
+-------------------
+* Fix inflation layer locking
+* Contributors: Levon Avagyan
+
 1.12.6 (2016-01-02)
 -------------------
 * Fix deadlock when using multiple static layers in a single program.

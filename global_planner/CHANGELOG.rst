@@ -2,32 +2,16 @@
 Changelog for package global_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.8 (2016-05-16)
+1.14.0 (2016-05-20)
 -------------------
 
-1.12.7 (2016-01-05)
--------------------
-
-1.12.6 (2016-01-02)
--------------------
-
-1.12.5 (2015-10-29)
+1.13.1 (2015-10-29)
 -------------------
 * Add missing angles dependecy
-* Contributors: Gary Servin
+* Fix for `#337 <https://github.com/ros-planning/navigation/issues/337>`_
+* Contributors: David V. Lu!!, Gary Servin
 
-1.12.4 (2015-06-03)
--------------------
-* Fix for `#337 <https://github.com/mikeferguson/navigation/issues/337>`_
-* Contributors: David V. Lu!!
-
-1.12.3 (2015-04-30)
--------------------
-
-1.12.2 (2015-03-31)
--------------------
-
-1.12.1 (2015-03-14)
+1.13.0 (2015-03-17)
 -------------------
 * Fixing various memory freeing operations
 * Add Orientation Filter to Global Planner

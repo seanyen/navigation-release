@@ -2,60 +2,69 @@
 Changelog for package costmap_2d
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.8 (2016-05-16)
+1.14.0 (2016-05-20)
 -------------------
-* fix resource locations to fix tests
-* Fix bug with resetting static layer
-* Made update map threadsafe
 * Reordered initializer list to match order of declarations.
-* Parametrize movementCB timer's period
+  This avoids compiler warning with some compilers.
+* Made update map threadsafe
+  This is necessary for some plugins (e.g. VoxelLayer) that implement a
+  thread unsafe updateBounds() function.
+* Fix bug with resetting static layer
+  If we don't have a new topic, consider our old data as if it were new.
+* fix resource locations to fix tests
+* Increase time-limit on failing test
+* Merge pull request `#388 <https://github.com/ros-planning/navigation/issues/388>`_ from yujinrobot/jade_inflation_ghost_fix
+  No more ghosts in the inflation layer
+* Fixes the dynamic reconfigure segfault
+  Doing a dynamic reconfigure of the inflation radius recreates
+  the cached cost values without first locking a mutex, which causes
+  a segfault. This breaks the reconfigure of inflation parameters into
+  a separate function and adds a mutex lock.
+* Merge pull request `#415 <https://github.com/ros-planning/navigation/issues/415>`_ from alexhenning/jade-fix-multiple-static-layers
+  Fixes an issue with having multiple static layers
+* Fixes an issue with having multiple static layers
+  If you have a static layer in both the local and global costmaps that
+  use the same map topic, there is a race condition that can cause the
+  static layer to get stuck after printing `Requesting map....`. This race
+  condition seems to be due to the call to shutdown in deactivate and how
+  the NodeHandle handles multiple subscribers under the hood.
+  This issue appears to happen about 1 in 1000 times in the setup I was
+  testing. This fix has never failed in over 1000000 tests. Instead of
+  calling activate and deactivate, the publisher is only recreated if the
+  topic has changed. Otherwise, it reuses the old setup.
+* fix related to issue `#408 <https://github.com/ros-planning/navigation/issues/408>`_ - With Rolling Window on, costmap_2d not properly updating bounds and costs in the static layer
 * No more ghosts in the inflation layer
-* Contributors: Alex Henning, Daniel Stonier, Michael Ferguson, Spyros Maniatopoulos
+  Previous bounds would fit the sensor measurements, and the inflation layer would clear
+  out to these, but leave 'ghosts' behind. These ghosts are from two sources - 1) the
+  inflation radius and 2) whole obstacles left behind as the robot has moved from the last point.
+  The modifications here remember the last bounds and set the new bounds so that a box at least
+  large enough to incorporate the old bounds plus the inflation radius is generated.
+* Contributors: Alex Henning, Daniel Stonier, Levon Avagyan, Michael Ferguson, palmieri
 
-1.12.7 (2016-01-05)
+1.13.1 (2015-10-29)
 -------------------
-* Fix inflation layer locking
-* Contributors: Levon Avagyan
-
-1.12.6 (2016-01-02)
--------------------
-* Fix deadlock when using multiple static layers in a single program.
-* Contributors: Alex Henning
-
-1.12.5 (2015-10-29)
--------------------
-* Remove canTransform spam.
+* Remove excessive canTransform spam.
 * Fix for `#382 <https://github.com/ros-planning/navigation/issues/382>`_
 * Republish costmap if origin changes
-* Remove extra sign definition and use proper one when padding footprint
 * Remove Footprint Layer
+* Remove extra sign definition and use proper one when padding footprint
 * fix plugin warnings on throw, closes `#205 <https://github.com/ros-planning/navigation/issues/205>`_
 * initialize publisher variables
-* Contributors: Daniel Stonier, David Lu, Michael Ferguson
-
-1.12.4 (2015-06-03)
--------------------
-* Look for robot_radius when footprint is not set. `#206 <https://github.com/mikeferguson/navigation/issues/206>`_
+* Look for robot_radius when footprint is not set. `#206 <https://github.com/ros-planning/navigation/issues/206>`_
 * Add a first_map_only parameter so we keep reusing the first received static map
-* Contributors: Jihoon Lee, Patrick Chin
-
-1.12.3 (2015-04-30)
--------------------
+* Merge pull request `#331 <https://github.com/ros-planning/navigation/issues/331>`_ from mikeferguson/static_layer_any_frame
 * support rolling static map in any frame
 * fix destructor of Costmap2D
 * proper locking during costmap update
-* Contributors: Michael Ferguson
-
-1.12.2 (2015-03-31)
--------------------
+* do not resize static map when rolling
 * Static layer works with rolling window now
-* Contributors: Michael Ferguson, Rein Appeldoorn
+* Contributors: Daniel Stonier, David Lu, Jihoon Lee, Michael Ferguson, Rein Appeldoorn, commaster90
 
-1.12.1 (2015-03-14)
+1.13.0 (2015-03-17)
 -------------------
 * fixed issue with voxel_layer and obstacle_layer both deleting the same dynamic_reconfigure::Server and causing segfaults
 * Fixing various memory freeing operations
-* Fix indexing error in OccupancyGridUpdate callback function.
+* static_layer: Fix indexing error in OccupancyGridUpdate callback function.
 * Contributors: Alex Bencz, David V. Lu!!, James Servos, Julse, Kaijen Hsiao
 
 1.12.0 (2015-02-04)

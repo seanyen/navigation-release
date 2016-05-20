@@ -2,38 +2,36 @@
 Changelog for package amcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.8 (2016-05-16)
+1.14.0 (2016-05-20)
 -------------------
 * Allow AMCL to run from bag file to allow very fast testing.
-* Fixes interpretation of a delayed initialpose message
-* Contributors: Derek King, Michael Ferguson, Stephan Wirth
+* Fixes interpretation of a delayed initialpose message (see `#424 <https://github.com/ros-planning/navigation/issues/424>`_).
+  The tf lookup as it was before this change was very likely to fail as
+  ros::Time::now() was used to look up a tf without waiting on the tf's
+  availability. Additionally, the computation of the "new pose" by
+  multiplying the delta that the robot moved from the initialpose's
+  timestamp to ros::Time::now() was wrong. That delta has to by multiplied
+  from the right to the "old pose".
+  This commit also changes the reference frame to look up this delta to be
+  the odom frame as this one is supposed to be smooth and therefore the
+  best reference to get relative robot motion in the robot (base link) frame.
+* New unit test for proper interpretation of a delayed initialpose message.
+  Modifies the set_pose.py script to be able to send an initial pose with
+  a user defined time stamp at a user defined time. Adds a rostest to
+  exercise this new option.
+  This reveals the issues mentioned in `#424 <https://github.com/ros-planning/navigation/issues/424>`_ (the new test fails).
+* Contributors: Derek King, Stephan Wirth
 
-1.12.7 (2016-01-05)
+1.13.1 (2015-10-29)
 -------------------
-
-1.12.6 (2016-01-02)
--------------------
-
-1.12.5 (2015-10-29)
--------------------
-
-1.12.4 (2015-06-03)
--------------------
-* add the set_map service to amcl
+* adds the set_map service to amcl
+* fix pthread_mutex_lock on shutdown
 * Contributors: Michael Ferguson, Stephan Wirth
 
-1.12.3 (2015-04-30)
--------------------
-
-1.12.2 (2015-03-31)
--------------------
-* fix pthread_mutex_lock on shutdown
-* Contributors: Michael Ferguson
-
-1.12.1 (2015-03-14)
+1.13.0 (2015-03-17)
 -------------------
 * amcl_node will now save latest pose on shutdown
-* Contributors: iandanforth
+* Contributors: Ian Danforth
 
 1.12.0 (2015-02-04)
 -------------------

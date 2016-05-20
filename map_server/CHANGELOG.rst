@@ -2,33 +2,25 @@
 Changelog for package map_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.12.8 (2016-05-16)
+1.14.0 (2016-05-20)
 -------------------
 * Corrections to alpha channel detection and usage.
+  Changing to actually detect whether the image has an alpha channel instead of
+  inferring based on the number of channels.
+  Also reverting to legacy behavior of trinary mode overriding alpha removal.
+  This will cause the alpha channel to be averaged in with the others in trinary
+  mode, which is the current behavior before this PR.
 * Removing some trailing whitespace.
 * Use enum to control map interpretation
 * Contributors: Aaron Hoy, David Lu
 
-1.12.7 (2016-01-05)
+1.13.1 (2015-10-29)
 -------------------
 
-1.12.6 (2016-01-02)
+1.13.0 (2015-03-17)
 -------------------
-
-1.12.5 (2015-10-29)
--------------------
-
-1.12.4 (2015-06-03)
--------------------
-
-1.12.3 (2015-04-30)
--------------------
-
-1.12.2 (2015-03-31)
--------------------
-
-1.12.1 (2015-03-14)
--------------------
+* rename image_loader library, fixes `#208 <https://github.com/ros-planning/navigation/issues/208>`_
+* Contributors: Michael Ferguson
 
 1.12.0 (2015-02-04)
 -------------------

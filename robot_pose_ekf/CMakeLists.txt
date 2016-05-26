@@ -66,11 +66,6 @@ install(
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(
-    PROGRAMS scripts/wtf.py
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
 ## Tests are failing on OSX for an unknown reason
 include(CMakeDetermineSystem)
 if(CMAKE_SYSTEM_NAME MATCHES "Linux")

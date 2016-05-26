@@ -2,19 +2,32 @@
 Changelog for package nav_core
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.14.0 (2016-05-20)
+1.12.9 (2016-05-26)
 -------------------
 
-1.13.1 (2015-10-29)
+1.12.8 (2016-05-16)
 -------------------
-* Merge pull request `#338 <https://github.com/ros-planning/navigation/issues/338>`_ from mikeferguson/planner_review
-* fix doxygen, couple style fixes
-* Contributors: Michael Ferguson
 
-1.13.0 (2015-03-17)
+1.12.7 (2016-01-05)
 -------------------
-* adding makePlan function with returned cost to base_global_planner
-* Contributors: phil0stine
+
+1.12.6 (2016-01-02)
+-------------------
+
+1.12.5 (2015-10-29)
+-------------------
+
+1.12.4 (2015-06-03)
+-------------------
+
+1.12.3 (2015-04-30)
+-------------------
+
+1.12.2 (2015-03-31)
+-------------------
+
+1.12.1 (2015-03-14)
+-------------------
 
 1.12.0 (2015-02-04)
 -------------------

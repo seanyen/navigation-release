@@ -1,6 +1,6 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package fake_localization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package move_base_msgs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1.12.9 (2016-05-26)
 -------------------
@@ -16,8 +16,6 @@ Changelog for package fake_localization
 
 1.12.5 (2015-10-29)
 -------------------
-* More tolerant initial pose transform lookup.
-* Contributors: Daniel Stonier
 
 1.12.4 (2015-06-03)
 -------------------
@@ -30,6 +28,8 @@ Changelog for package fake_localization
 
 1.12.1 (2015-03-14)
 -------------------
+* Remove unused dependencies in move_base_msgs
+* Contributors: Daniel Stonier
 
 1.12.0 (2015-02-04)
 -------------------
@@ -66,4 +66,3 @@ Changelog for package fake_localization
 1.11.4 (2013-09-27)
 -------------------
 * Package URL Updates
-* amcl_pose and particle cloud are now published latched

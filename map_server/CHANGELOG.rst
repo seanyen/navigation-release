@@ -2,6 +2,9 @@
 Changelog for package map_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.9 (2016-05-26)
+-------------------
+
 1.12.8 (2016-05-16)
 -------------------
 * Corrections to alpha channel detection and usage.

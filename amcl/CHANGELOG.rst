@@ -2,6 +2,9 @@
 Changelog for package amcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.9 (2016-05-26)
+-------------------
+
 1.12.8 (2016-05-16)
 -------------------
 * Allow AMCL to run from bag file to allow very fast testing.

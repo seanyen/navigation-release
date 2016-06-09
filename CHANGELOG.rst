@@ -2,6 +2,18 @@
 Changelog for package costmap_2d
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.11 (2016-06-08)
+--------------------
+* Fixed bug with inflation layer that caused underinflation
+  When marking before adding to the priority queue, it was possible to
+  underestimate the cost of a cell. This is both dangerous and can lead to
+  unintended side-effects with navigation.
+* Fixed bug with artifacts when not current
+  This is due to not getting clearing observations if the marking
+  observations aren't current.
+* Fix bug with inflation artifacts being left behind
+* Contributors: Alex Henning
+
 1.12.10 (2016-05-27)
 --------------------
 * Fixes issue with costmaps shearing

@@ -1,0 +1,13 @@
+Source: ros-lunar-dwa-local-planner
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-lunar-base-local-planner, ros-lunar-catkin, ros-lunar-cmake-modules, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-pcl-conversions, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-tf
+Homepage: http://wiki.ros.org/dwa_local_planner
+Standards-Version: 3.9.2
+
+Package: ros-lunar-dwa-local-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-lunar-base-local-planner, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-tf
+Description: This package provides an implementation of the Dynamic Window Approach to local robot navigation on a plane.
+ Given a global plan to follow and a costmap, the local planner produces velocity commands to send to a mobile base. This package supports any robot who's footprint can be represented as a convex polygon or cicrle, and exposes its configuration as ROS parameters that can be set in a launch file. The parameters for this planner are also dynamically reconfigurable. This package's ROS wrapper adheres to the BaseLocalPlanner interface specified in the nav_core package.

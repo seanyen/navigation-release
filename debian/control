@@ -1,0 +1,13 @@
+Source: ros-lunar-base-local-planner
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libeigen3-dev, ros-lunar-angles, ros-lunar-catkin (>= 0.5.68), ros-lunar-cmake-modules, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-message-generation, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-pcl-conversions, ros-lunar-pcl-ros, ros-lunar-pluginlib, ros-lunar-rosconsole, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-std-msgs, ros-lunar-tf, ros-lunar-visualization-msgs, ros-lunar-voxel-grid
+Homepage: http://wiki.ros.org/base_local_planner
+Standards-Version: 3.9.2
+
+Package: ros-lunar-base-local-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libeigen3-dev, ros-lunar-angles, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-message-generation, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-pcl-ros, ros-lunar-pluginlib, ros-lunar-rosconsole, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-std-msgs, ros-lunar-tf, ros-lunar-visualization-msgs, ros-lunar-voxel-grid
+Description: This package provides implementations of the Trajectory Rollout and Dynamic Window approaches to local robot navigation on a plane.
+ Given a plan to follow and a costmap, the controller produces velocity commands to send to a mobile base. This package supports both holonomic and non-holonomic robots, any robot footprint that can be represented as a convex polygon or circle, and exposes its configuration as ROS parameters that can be set in a launch file. This package's ROS wrapper adheres to the BaseLocalPlanner interface specified in the nav_core package.

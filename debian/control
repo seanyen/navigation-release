@@ -1,0 +1,13 @@
+Source: ros-lunar-amcl
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-catkin, ros-lunar-dynamic-reconfigure, ros-lunar-map-server, ros-lunar-message-filters, ros-lunar-nav-msgs, ros-lunar-rosbag, ros-lunar-roscpp, ros-lunar-rostest, ros-lunar-std-srvs, ros-lunar-tf
+Homepage: http://wiki.ros.org/amcl
+Standards-Version: 3.9.2
+
+Package: ros-lunar-amcl
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-dynamic-reconfigure, ros-lunar-nav-msgs, ros-lunar-rosbag, ros-lunar-roscpp, ros-lunar-tf
+Description: amcl is a probabilistic localization system for a robot moving in 2D.
+ It implements the adaptive (or KLD-sampling) Monte Carlo localization approach (as described by Dieter Fox), which uses a particle filter to track the pose of a robot against a known map. This node is derived, with thanks, from Andrew Howard's excellent 'amcl' Player driver.

@@ -1,0 +1,12 @@
+Source: ros-lunar-global-planner
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-angles, ros-lunar-catkin, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-navfn, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-tf
+Homepage: http://wiki.ros.org/global_planner
+Standards-Version: 3.9.2
+
+Package: ros-lunar-global-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-navfn, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-tf
+Description: A path planner library and node.

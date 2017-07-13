@@ -1,0 +1,13 @@
+Source: ros-lunar-move-base
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-actionlib, ros-lunar-base-local-planner, ros-lunar-catkin, ros-lunar-clear-costmap-recovery, ros-lunar-cmake-modules, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-message-generation, ros-lunar-move-base-msgs, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-navfn, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-rotate-recovery, ros-lunar-std-msgs, ros-lunar-std-srvs, ros-lunar-tf, ros-lunar-visualization-msgs
+Homepage: http://wiki.ros.org/move_base
+Standards-Version: 3.9.2
+
+Package: ros-lunar-move-base
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-actionlib, ros-lunar-base-local-planner, ros-lunar-clear-costmap-recovery, ros-lunar-costmap-2d, ros-lunar-dynamic-reconfigure, ros-lunar-geometry-msgs, ros-lunar-message-runtime, ros-lunar-move-base-msgs, ros-lunar-nav-core, ros-lunar-nav-msgs, ros-lunar-navfn, ros-lunar-pluginlib, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-rotate-recovery, ros-lunar-std-msgs, ros-lunar-std-srvs, ros-lunar-tf, ros-lunar-visualization-msgs
+Description: The move_base package provides an implementation of an action (see the actionlib package) that, given a goal in the world, will attempt to reach it with a mobile base.
+ The move_base node links together a global and local planner to accomplish its global navigation task. It supports any global planner adhering to the nav_core::BaseGlobalPlanner interface specified in the nav_core package and any local planner adhering to the nav_core::BaseLocalPlanner interface specified in the nav_core package. The move_base node also maintains two costmaps, one for the global planner, and one for a local planner (see the costmap_2d package) that are used to accomplish navigation tasks.

@@ -1,0 +1,13 @@
+Source: ros-lunar-map-server
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libsdl-image1.2-dev, libyaml-cpp-dev, ros-lunar-catkin (>= 0.5.68), ros-lunar-nav-msgs, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-rostest, ros-lunar-tf
+Homepage: http://wiki.ros.org/map_server
+Standards-Version: 3.9.2
+
+Package: ros-lunar-map-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdl-image1.2-dev, libyaml-cpp-dev, ros-lunar-nav-msgs, ros-lunar-roscpp, ros-lunar-rostest, ros-lunar-tf
+Description: map_server provides the map_server ROS Node, which offers map data as a ROS Service.
+ It also provides the map_saver command-line utility, which allows dynamically generated maps to be saved to file.

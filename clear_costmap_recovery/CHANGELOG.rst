@@ -2,6 +2,12 @@
 Changelog for package clear_costmap_recovery
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.14.1 (2017-08-07)
+-------------------
+* Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
+* remove GCC warnings
+* Contributors: Martin Günther, Vincent Rabaud
+
 1.14.0 (2016-05-20)
 -------------------
 

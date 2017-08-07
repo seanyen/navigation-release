@@ -2,6 +2,12 @@
 Changelog for package nav_core
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.15.0 (2017-08-07)
+-------------------
+* convert packages to format2
+* makePlan overload must return.
+* Contributors: Eric Tappan, Mikael Arguedas
+
 1.14.0 (2016-05-20)
 -------------------
 

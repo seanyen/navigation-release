@@ -164,6 +164,8 @@ namespace move_base {
 
       bool isQuaternionValid(const geometry_msgs::Quaternion& q);
 
+      bool getRobotPose(tf::Stamped<tf::Pose>& global_posee, costmap_2d::Costmap2DROS* costmap);
+
       double distance(const geometry_msgs::PoseStamped& p1, const geometry_msgs::PoseStamped& p2);
 
       geometry_msgs::PoseStamped goalToGlobalFrame(const geometry_msgs::PoseStamped& goal_pose_msg);
@@ -189,6 +191,8 @@ namespace move_base {
       tf::Stamped<tf::Pose> global_pose_;
       double planner_frequency_, controller_frequency_, inscribed_radius_, circumscribed_radius_;
       double planner_patience_, controller_patience_;
+      int32_t max_planning_retries_;
+      uint32_t planning_retries_;
       double conservative_reset_dist_, clearing_radius_;
       ros::Publisher current_goal_pub_, vel_pub_, action_goal_pub_;
       ros::Subscriber goal_sub_;
@@ -212,8 +216,8 @@ namespace move_base {
 
       //set up the planner's thread
       bool runPlanner_;
-      boost::mutex planner_mutex_;
-      boost::condition_variable planner_cond_;
+      boost::recursive_mutex planner_mutex_;
+      boost::condition_variable_any planner_cond_;
       geometry_msgs::PoseStamped planner_goal_;
       boost::thread* planner_thread_;
 

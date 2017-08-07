@@ -2,11 +2,10 @@
 Changelog for package fake_localization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.15.0 (2017-08-07)
+1.14.1 (2017-08-07)
 -------------------
-* convert packages to format2
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* Contributors: Martin Günther, Mikael Arguedas, Vincent Rabaud
+* Contributors: Martin Günther, Vincent Rabaud
 
 1.14.0 (2016-05-20)
 -------------------

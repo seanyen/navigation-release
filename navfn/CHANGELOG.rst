@@ -2,15 +2,13 @@
 Changelog for package navfn
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.15.0 (2017-08-07)
+1.14.1 (2017-08-07)
 -------------------
-* convert packages to format2
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* import only PCL common
 * port `#549 <https://github.com/ros-planning/navigation/issues/549>`_ (in alphabetical order)
 * address gcc6 build error
 * remove GCC warnings
-* Contributors: Lukas Bulwahn, Martin Günther, Michael Ferguson, Mikael Arguedas, Vincent Rabaud
+* Contributors: Lukas Bulwahn, Martin Günther, Michael Ferguson, Vincent Rabaud
 
 1.14.0 (2016-05-20)
 -------------------

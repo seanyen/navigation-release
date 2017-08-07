@@ -27,7 +27,7 @@ find_package(Boost REQUIRED
         )
 
 find_package(Eigen3 REQUIRED)
-find_package(PCL REQUIRED COMPONENTS common)
+find_package(PCL REQUIRED)
 remove_definitions(-DDISABLE_LIBUSB-1.0)
 include_directories(
     include

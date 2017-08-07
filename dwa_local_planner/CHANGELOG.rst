@@ -2,15 +2,12 @@
 Changelog for package dwa_local_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.15.0 (2017-08-07)
+1.14.1 (2017-08-07)
 -------------------
-* convert packages to format2
-* Add cost function to prevent unnecessary spinning
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* import only PCL common
+* Add cost function to prevent unnecessary spinning
 * remove GCC warnings
-* Fix CMake warnings
-* Contributors: Martin Günther, Mikael Arguedas, Morgan Quigley, Vincent Rabaud
+* Contributors: Martin Günther, Morgan Quigley, Vincent Rabaud
 
 1.14.0 (2016-05-20)
 -------------------

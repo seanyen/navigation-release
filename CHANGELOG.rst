@@ -2,6 +2,9 @@
 Changelog for package amcl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.14.2 (2017-08-14)
+-------------------
+
 1.14.1 (2017-08-07)
 -------------------
 * Reference Issue `#592 <https://github.com/ros-planning/navigation/issues/592>`_ Added warning to AMCL when map is published on ... (`#604 <https://github.com/ros-planning/navigation/issues/604>`_)

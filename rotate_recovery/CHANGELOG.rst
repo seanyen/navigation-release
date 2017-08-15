@@ -2,10 +2,14 @@
 Changelog for package rotate_recovery
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.14.1 (2017-08-07)
+1.15.1 (2017-08-14)
 -------------------
+
+1.15.0 (2017-08-07)
+-------------------
+* convert packages to format2
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* Contributors: Martin Günther, Vincent Rabaud
+* Contributors: Martin Günther, Mikael Arguedas, Vincent Rabaud
 
 1.14.0 (2016-05-20)
 -------------------

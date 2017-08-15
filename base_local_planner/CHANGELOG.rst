@@ -2,6 +2,9 @@
 Changelog for package base_local_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.15.1 (2017-08-14)
+-------------------
+
 1.15.0 (2017-08-07)
 -------------------
 * set message_generation build and runtime dependency

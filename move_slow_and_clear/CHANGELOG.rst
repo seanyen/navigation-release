@@ -2,18 +2,15 @@
 Changelog for package move_slow_and_clear
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.15.1 (2017-08-14)
+1.14.2 (2017-08-14)
 -------------------
 
-1.15.0 (2017-08-07)
+1.14.1 (2017-08-07)
 -------------------
-* convert packages to format2
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* import only PCL common
 * address gcc6 build error
 * remove GCC warnings
-* Fix CMake warnings
-* Contributors: Lukas Bulwahn, Martin Günther, Mikael Arguedas, Vincent Rabaud
+* Contributors: Lukas Bulwahn, Martin Günther, Vincent Rabaud
 
 1.14.0 (2016-05-20)
 -------------------

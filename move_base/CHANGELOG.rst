@@ -2,31 +2,65 @@
 Changelog for package move_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.14.2 (2017-08-14)
--------------------
-
-1.14.1 (2017-08-07)
--------------------
-* Add a max_planning_retries parameter to move_base [kinetic] (`#539 <https://github.com/ros-planning/navigation/issues/539>`_)
-* Fixed deadlock when changing global planner
+1.12.14 (2017-12-19)
+--------------------
+* Only do a getRobotPose when no start pose is given (`#628 <https://github.com/ros-planning/navigation/issues/628>`_)
+* Merge pull request `#524 <https://github.com/ros-planning/navigation/issues/524>`_ from corot/call_less_the_planner
+  Fix for `#523 <https://github.com/ros-planning/navigation/issues/523>`_: global planner called much more times than expected
+* Merge pull request `#501 <https://github.com/ros-planning/navigation/issues/501>`_ from selvasamuel/indigo-devel
 * Fix CMakeLists + package.xmls (`#548 <https://github.com/ros-planning/navigation/issues/548>`_)
-* Added deps to amcl costmap_2d move_base (`#512 <https://github.com/ros-planning/navigation/issues/512>`_)
+* Fix: global planner called much more times than max_planning_retries or time allowed by planner_patiente
+* Fixed deadlock when changing global planner
+* Contributors: Jorge Santos Simón, Martin Günther, Michael Ferguson, ne0
+
+1.12.13 (2016-08-15)
+--------------------
+* Merge pull request `#495 <https://github.com/ros-planning/navigation/issues/495>`_ from corot/patch-3
+  Fix `#494 <https://github.com/ros-planning/navigation/issues/494>`_: prevent zero-velocity commands during recovery behaviors
 * move_base: Add move_base_msgs to find_package.
-* Contributors: Jorge Santos Simón, Maarten de Vries, Martin Günther, Vincent Rabaud, mryellow, ne0
+* Issue `#496 <https://github.com/ros-planning/navigation/issues/496>`_: add a max_planning_retries parameter as an alternative to planner_patience to limit the failed calls to global planner
+* Fix `#494 <https://github.com/ros-planning/navigation/issues/494>`_: prevent zero-velocity commands during recovery behaviors
+  Partially reverts 0a686c90c6f188a2731f6f88c2c08610f0ec907e
+* Contributors: Jorge Santos, Jorge Santos Simón, Maarten de Vries, Michael Ferguson
 
-1.14.0 (2016-05-20)
+1.12.12 (2016-06-24)
+--------------------
+
+1.12.11 (2016-06-08)
+--------------------
+* [Fix] Illegal vector visit when no path planned
+* Contributors: gjc13
+
+1.12.10 (2016-05-27)
+--------------------
+
+1.12.9 (2016-05-26)
 -------------------
 
-1.13.1 (2015-10-29)
+1.12.8 (2016-05-16)
 -------------------
-* Removes installation of nonexistent directories
-* use correct size for clearing window
-* full name has been required for eons, this code just adds unneeded complexity
-* remove ancient conversion scripts from v0.2 to v0.3
+
+1.12.7 (2016-01-05)
+-------------------
+
+1.12.6 (2016-01-02)
+-------------------
+
+1.12.5 (2015-10-29)
+-------------------
+
+1.12.4 (2015-06-03)
+-------------------
+
+1.12.3 (2015-04-30)
+-------------------
 * proper locking during costmap update
-* Contributors: Michael Ferguson, Thiago de Freitas Oliveira Araujo
+* Contributors: Michael Ferguson
 
-1.13.0 (2015-03-17)
+1.12.2 (2015-03-31)
+-------------------
+
+1.12.1 (2015-03-14)
 -------------------
 * Fixing various memory freeing operations
 * Contributors: Alex Bencz

@@ -10,7 +10,6 @@ find_package(catkin REQUIRED
             tf
             dynamic_reconfigure
             nav_msgs
-            std_srvs
         )
 
 find_package(Boost REQUIRED)

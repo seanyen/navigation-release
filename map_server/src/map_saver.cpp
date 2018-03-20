@@ -2,10 +2,10 @@
  * map_saver
  * Copyright (c) 2008, Willow Garage, Inc.
  * All rights reserved.
- *
+ * 
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *
+ * 
  *     * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above copyright
@@ -14,7 +14,7 @@
  *     * Neither the name of the <ORGANIZATION> nor the names of its
  *       contributors may be used to endorse or promote products derived from
  *       this software without specific prior written permission.
- *
+ * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -32,15 +32,15 @@
 #include "ros/ros.h"
 #include "ros/console.h"
 #include "nav_msgs/GetMap.h"
-#include "tf2/LinearMath/Matrix3x3.h"
+#include "tf/LinearMath/Matrix3x3.h"
 #include "geometry_msgs/Quaternion.h"
 
 using namespace std;
-
+ 
 /**
  * @brief Map generation node.
  */
-class MapGenerator
+class MapGenerator 
 {
 
   public:
@@ -102,12 +102,7 @@ free_thresh: 0.196
        */
 
       geometry_msgs::Quaternion orientation = map->info.origin.orientation;
-      tf2::Matrix3x3 mat(tf2::Quaternion(
-        orientation.x,
-        orientation.y,
-        orientation.z,
-        orientation.w
-      ));
+      tf::Matrix3x3 mat(tf::Quaternion(orientation.x, orientation.y, orientation.z, orientation.w));
       double yaw, pitch, roll;
       mat.getEulerYPR(yaw, pitch, roll);
 
@@ -130,7 +125,7 @@ free_thresh: 0.196
               "  map_saver -h\n"\
               "  map_saver [-f <mapname>] [ROS remapping args]"
 
-int main(int argc, char** argv)
+int main(int argc, char** argv) 
 {
   ros::init(argc, argv, "map_saver");
   std::string mapname = "map";
@@ -159,6 +154,9 @@ int main(int argc, char** argv)
     }
   }
 
+  if(*mapname.rbegin() == '/')
+    mapname += "map";
+  
   MapGenerator mg(mapname);
 
   while(!mg.saved_map_ && ros::ok())

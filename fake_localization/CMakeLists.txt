@@ -31,6 +31,7 @@ target_link_libraries(fake_localization
     ${catkin_LIBRARIES}
     ${Boost_LIBRARIES}
     )
+
 add_dependencies(fake_localization ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 install(

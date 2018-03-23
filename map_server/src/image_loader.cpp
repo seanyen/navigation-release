@@ -76,7 +76,7 @@ loadMapFromFile(nav_msgs::GetMap::Response* resp,
   if(!(img = IMG_Load(fname)))
   {
     std::string errmsg = std::string("failed to open image file \"") +
-            std::string(fname) + std::string("\"");
+            std::string(fname) + std::string("\": ") + IMG_GetError();
     throw std::runtime_error(errmsg);
   }
 
@@ -138,7 +138,7 @@ loadMapFromFile(nav_msgs::GetMap::Response* resp,
 
 
       // If negate is true, we consider blacker pixels free, and whiter
-      // pixels free.  Otherwise, it's vice versa.
+      // pixels occupied.  Otherwise, it's vice versa.
       occ = (255 - color_avg) / 255.0;
 
       // Apply thresholds to RGB means to determine occupancy values for

@@ -1,0 +1,12 @@
+Source: ros-lunar-navigation
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-catkin
+Homepage: http://wiki.ros.org/navigation
+Standards-Version: 3.9.2
+
+Package: ros-lunar-navigation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-amcl, ros-lunar-base-local-planner, ros-lunar-carrot-planner, ros-lunar-clear-costmap-recovery, ros-lunar-costmap-2d, ros-lunar-dwa-local-planner, ros-lunar-fake-localization, ros-lunar-global-planner, ros-lunar-map-server, ros-lunar-move-base, ros-lunar-move-base-msgs, ros-lunar-move-slow-and-clear, ros-lunar-nav-core, ros-lunar-navfn, ros-lunar-robot-pose-ekf, ros-lunar-rotate-recovery, ros-lunar-voxel-grid
+Description: A 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base.

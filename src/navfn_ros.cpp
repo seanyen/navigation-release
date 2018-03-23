@@ -43,7 +43,7 @@
 #include <pcl_conversions/pcl_conversions.h>
 
 //register this planner as a BaseGlobalPlanner plugin
-PLUGINLIB_DECLARE_CLASS(navfn, NavfnROS, navfn::NavfnROS, nav_core::BaseGlobalPlanner)
+PLUGINLIB_EXPORT_CLASS(navfn::NavfnROS, nav_core::BaseGlobalPlanner)
 
 namespace navfn {
 
@@ -241,27 +241,9 @@ namespace navfn {
     tf::poseStampedMsgToTF(start, start_pose);
     clearRobotCell(start_pose, mx, my);
 
-#if 0
-    {
-      static int n = 0;
-      static char filename[1000];
-      snprintf( filename, 1000, "navfnros-makeplan-costmapB-%04d.pgm", n++ );
-      costmap->saveRawMap( std::string( filename ));
-    }
-#endif
-
     //make sure to resize the underlying array that Navfn uses
     planner_->setNavArr(costmap_->getSizeInCellsX(), costmap_->getSizeInCellsY());
     planner_->setCostmap(costmap_->getCharMap(), true, allow_unknown_);
-
-#if 0
-    {
-      static int n = 0;
-      static char filename[1000];
-      snprintf( filename, 1000, "navfnros-makeplan-costmapC-%04d", n++ );
-      planner_->savemap( filename );
-    }
-#endif
 
     int map_start[2];
     map_start[0] = mx;

@@ -1,0 +1,12 @@
+Source: ros-lunar-fake-localization
+Section: misc
+Priority: extra
+Maintainer: David V. Lu!! <davidvlu@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-angles, ros-lunar-catkin, ros-lunar-geometry-msgs, ros-lunar-message-filters, ros-lunar-nav-msgs, ros-lunar-rosconsole, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-tf
+Homepage: http://wiki.ros.org/fake_localization
+Standards-Version: 3.9.2
+
+Package: ros-lunar-fake-localization
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-geometry-msgs, ros-lunar-message-filters, ros-lunar-nav-msgs, ros-lunar-rosconsole, ros-lunar-roscpp, ros-lunar-rospy, ros-lunar-tf
+Description: A ROS node that simply forwards odometry information.

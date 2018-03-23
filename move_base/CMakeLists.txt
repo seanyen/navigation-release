@@ -22,8 +22,8 @@ find_package(catkin REQUIRED
         std_srvs
         tf
 )
-find_package(Eigen REQUIRED)
-add_definitions(${EIGEN_DEFINITIONS})
+find_package(Eigen3 REQUIRED)
+add_definitions(${EIGEN3_DEFINITIONS})
 
 # dynamic reconfigure
 generate_dynamic_reconfigure_options(
@@ -42,7 +42,7 @@ catkin_package(
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
-    ${EIGEN_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIRS}
 )
 
 # move_base
@@ -61,19 +61,6 @@ add_executable(move_base_node
 add_dependencies(move_base_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(move_base_node move_base)
 set_target_properties(move_base_node PROPERTIES OUTPUT_NAME move_base)
-
-install(DIRECTORY launch
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-    USE_SOURCE_PERMISSIONS
-    )
-
-install(
-    PROGRAMS
-       scripts/subtopic_forwarder.py
-       scripts/subtopic_forwarder_node.py
-       scripts/warner.py
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
 
 install(
     TARGETS

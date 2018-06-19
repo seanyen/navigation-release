@@ -1,6 +1,6 @@
 <package>
     <name>navfn</name>
-    <version>1.12.16</version>
+    <version>1.14.4</version>
     <description>
 
         navfn provides a fast interpolated navigation function that can be used to create plans for
@@ -36,7 +36,8 @@
     <build_depend>roscpp</build_depend>
     <build_depend>tf</build_depend>
     <build_depend>visualization_msgs</build_depend>
-  
+    <build_depend>message_generation</build_depend>
+
     <run_depend>costmap_2d</run_depend>
     <run_depend>geometry_msgs</run_depend>
     <run_depend>message_runtime</run_depend>

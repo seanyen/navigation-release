@@ -2,6 +2,9 @@
 Changelog for package move_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.12.16 (2018-06-19)
+--------------------
+
 1.12.15 (2018-03-20)
 --------------------
 * Merge pull request `#684 <https://github.com/ros-planning/navigation/issues/684>`_ from DLu/fix_523

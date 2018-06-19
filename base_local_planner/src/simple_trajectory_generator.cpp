@@ -211,10 +211,6 @@ bool SimpleTrajectoryGenerator::generateTrajectory(
             sim_time_angle    / angular_sim_granularity_));
   }
 
-  if (num_steps == 0) {
-    return false;
-  }
-
   //compute a timestep
   double dt = sim_time_ / num_steps;
   traj.time_delta_ = dt;
@@ -251,7 +247,7 @@ bool SimpleTrajectoryGenerator::generateTrajectory(
 
   } // end for simulation steps
 
-  return true; // trajectory has at least one point
+  return num_steps > 0; // true if trajectory has at least one point
 }
 
 Eigen::Vector3f SimpleTrajectoryGenerator::computeNewPositions(const Eigen::Vector3f& pos,
@@ -264,7 +260,7 @@ Eigen::Vector3f SimpleTrajectoryGenerator::computeNewPositions(const Eigen::Vect
 }
 
 /**
- * change vel using acceleration limits to converge towards sample_target-vel
+ * cheange vel using acceleration limits to converge towards sample_target-vel
  */
 Eigen::Vector3f SimpleTrajectoryGenerator::computeNewVelocities(const Eigen::Vector3f& sample_target_vel,
     const Eigen::Vector3f& vel, Eigen::Vector3f acclimits, double dt) {

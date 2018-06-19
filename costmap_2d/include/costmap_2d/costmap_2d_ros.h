@@ -122,18 +122,6 @@ public:
    */
   bool getRobotPose(tf::Stamped<tf::Pose>& global_pose) const;
 
-  /** @brief Returns costmap name */
-  std::string getName() const
-    {
-      return name_;
-    }
-
-  /** @brief Returns the delay in transform (tf) data that is tolerable in seconds */
-  double getTransformTolerance() const
-    {
-      return transform_tolerance_;
-    }
-
   /** @brief Return a pointer to the "master" costmap which receives updates from all the layers.
    *
    * Same as calling getLayeredCostmap()->getCostmap(). */
@@ -260,7 +248,6 @@ private:
 
   ros::Subscriber footprint_sub_;
   ros::Publisher footprint_pub_;
-  bool got_footprint_;
   std::vector<geometry_msgs::Point> unpadded_footprint_;
   std::vector<geometry_msgs::Point> padded_footprint_;
   float footprint_padding_;

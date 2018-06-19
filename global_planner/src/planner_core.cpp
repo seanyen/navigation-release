@@ -337,8 +337,10 @@ void GlobalPlanner::publishPlan(const std::vector<geometry_msgs::PoseStamped>& p
     nav_msgs::Path gui_path;
     gui_path.poses.resize(path.size());
 
-    gui_path.header.frame_id = frame_id_;
-    gui_path.header.stamp = ros::Time::now();
+    if (!path.empty()) {
+        gui_path.header.frame_id = path[0].header.frame_id;
+        gui_path.header.stamp = path[0].header.stamp;
+    }
 
     // Extract the plan in world co-ordinates, we assume the path is all in the same frame
     for (unsigned int i = 0; i < path.size(); i++) {

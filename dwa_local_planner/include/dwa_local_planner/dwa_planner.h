@@ -45,7 +45,6 @@
 
 //for creating a local cost grid
 #include <base_local_planner/map_grid_visualizer.h>
-#include <pcl_ros/publisher.h>
 
 //for obstacle data access
 #include <costmap_2d/costmap_2d.h>
@@ -79,11 +78,6 @@ namespace dwa_local_planner {
       DWAPlanner(std::string name, base_local_planner::LocalPlannerUtil *planner_util);
 
       /**
-       * @brief  Destructor for the planner
-       */
-      ~DWAPlanner() {if(traj_cloud_) delete traj_cloud_;}
-
-      /**
        * @brief Reconfigures the trajectory planner
        */
       void reconfigure(DWAPlannerConfig &cfg);
@@ -108,16 +102,16 @@ namespace dwa_local_planner {
        * @return The highest scoring trajectory. A cost >= 0 means the trajectory is legal to execute.
        */
       base_local_planner::Trajectory findBestPath(
-          tf::Stamped<tf::Pose> global_pose,
-          tf::Stamped<tf::Pose> global_vel,
-          tf::Stamped<tf::Pose>& drive_velocities,
+          const geometry_msgs::PoseStamped& global_pose,
+          const geometry_msgs::PoseStamped& global_vel,
+          geometry_msgs::PoseStamped& drive_velocities,
           std::vector<geometry_msgs::Point> footprint_spec);
 
       /**
        * @brief  Take in a new global plan for the local planner to follow, and adjust local costmaps
        * @param  new_plan The new global plan
        */
-      void updatePlanAndLocalCosts(tf::Stamped<tf::Pose> global_pose,
+      void updatePlanAndLocalCosts(const geometry_msgs::PoseStamped& global_pose,
           const std::vector<geometry_msgs::PoseStamped>& new_plan);
 
       /**
@@ -159,8 +153,8 @@ namespace dwa_local_planner {
       std::vector<geometry_msgs::PoseStamped> global_plan_;
 
       boost::mutex configuration_mutex_;
-      pcl::PointCloud<base_local_planner::MapGridCostPoint>* traj_cloud_;
-      pcl_ros::Publisher<base_local_planner::MapGridCostPoint> traj_cloud_pub_;
+      std::string frame_id_;
+      ros::Publisher traj_cloud_pub_;
       bool publish_cost_grid_pc_; ///< @brief Whether or not to build and publish a PointCloud
       bool publish_traj_pc_;
 

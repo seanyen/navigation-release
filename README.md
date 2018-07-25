@@ -1,3 +1,42 @@
+## navigation (melodic) - 1.16.0-0
+
+The packages in the `navigation` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -r melodic -t melodic navigation` on `Wed, 25 Jul 2018 15:27:30 -0000`
+
+These packages were released:
+- `amcl`
+- `base_local_planner`
+- `carrot_planner`
+- `clear_costmap_recovery`
+- `costmap_2d`
+- `dwa_local_planner`
+- `fake_localization`
+- `global_planner`
+- `map_server`
+- `move_base`
+- `move_slow_and_clear`
+- `nav_core`
+- `navfn`
+- `navigation`
+- `rotate_recovery`
+- `voxel_grid`
+
+Version of package(s) in repository `navigation`:
+
+- upstream repository: https://github.com/ros-planning/navigation.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.16.0-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.6`
+- catkin_pkg version: `0.4.6`
+- rosdep version: `0.12.2`
+- rosdistro version: `0.6.8`
+- vcstools version: `0.1.40`
+
+
 ## navigation (kinetic) - 1.14.4-0
 
 The packages in the `navigation` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic navigation` on `Tue, 19 Jun 2018 19:21:39 -0000`

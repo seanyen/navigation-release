@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
     <name>amcl</name>
-    <version>1.16.0</version>
+    <version>1.16.1</version>
     <description>
         <p>
             amcl is a probabilistic localization system for a robot moving in
@@ -33,6 +33,7 @@
     <depend>rosbag</depend>
     <depend>roscpp</depend>
     <depend>std_srvs</depend>
+    <depend>sensor_msgs</depend>
     <depend>tf2_ros</depend>
 
     <test_depend>map_server</test_depend>

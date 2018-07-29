@@ -2,6 +2,9 @@
 Changelog for package base_local_planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.16.1 (2018-07-28)
+-------------------
+
 1.16.0 (2018-07-25)
 -------------------
 * Remove PCL `#765 <https://github.com/ros-planning/navigation/issues/765>`_

@@ -1,8 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1)
 project(amcl)
+
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 11)
+endif()
 
 find_package(catkin REQUIRED
   COMPONENTS
+    diagnostic_updater
     dynamic_reconfigure
     geometry_msgs
     message_filters
@@ -26,6 +31,7 @@ generate_dynamic_reconfigure_options(
 
 catkin_package(
   CATKIN_DEPENDS
+    diagnostic_updater
     dynamic_reconfigure
     geometry_msgs
     nav_msgs
@@ -42,6 +48,17 @@ catkin_package(
 
 include_directories(include)
 include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+include_directories(src/include)
+
+check_include_file(unistd.h HAVE_UNISTD_H)
+if (HAVE_UNISTD_H)
+  add_definitions(-DHAVE_UNISTD_H)
+endif (HAVE_UNISTD_H)
+
+check_symbol_exists(drand48 stdlib.h HAVE_DRAND48)
+if (HAVE_DRAND48)
+  add_definitions(-DHAVE_DRAND48)
+endif (HAVE_DRAND48)
 
 add_library(amcl_pf
                     src/amcl/pf/pf.c
@@ -76,10 +93,13 @@ target_link_libraries(amcl
 )
 
 install( TARGETS
-    amcl amcl_sensors amcl_map amcl_pf
-    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    amcl
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install( TARGETS
+    amcl_sensors amcl_map amcl_pf
+    DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 )
 
 install(DIRECTORY include/amcl/

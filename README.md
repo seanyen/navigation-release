@@ -1,3 +1,43 @@
+## navigation (kinetic) - 1.14.6-1
+
+The packages in the `navigation` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic navigation` on `Wed, 04 Mar 2020 18:09:04 -0000`
+
+These packages were released:
+- `amcl`
+- `base_local_planner`
+- `carrot_planner`
+- `clear_costmap_recovery`
+- `costmap_2d`
+- `dwa_local_planner`
+- `fake_localization`
+- `global_planner`
+- `map_server`
+- `move_base`
+- `move_slow_and_clear`
+- `nav_core`
+- `navfn`
+- `navigation`
+- `robot_pose_ekf`
+- `rotate_recovery`
+- `voxel_grid`
+
+Version of package(s) in repository `navigation`:
+
+- upstream repository: https://github.com/ros-planning/navigation.git
+- release repository: https://github.com/ros-gbp/navigation-release.git
+- rosdistro version: `1.14.5-1`
+- old version: `1.14.5-1`
+- new version: `1.14.6-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.0`
+- catkin_pkg version: `0.4.10`
+- rosdep version: `0.15.1`
+- rosdistro version: `0.7.5`
+- vcstools version: `0.1.42`
+
+
 ## navigation (kinetic) - 1.14.5-1
 
 The packages in the `navigation` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic navigation` on `Fri, 15 Nov 2019 16:22:19 -0000`

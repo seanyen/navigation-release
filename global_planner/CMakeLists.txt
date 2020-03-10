@@ -12,8 +12,7 @@ find_package(catkin REQUIRED
     nav_msgs
     pluginlib
     roscpp
-    tf2_geometry_msgs
-    tf2_ros
+    tf
 )
 
 generate_dynamic_reconfigure_options(
@@ -32,7 +31,7 @@ catkin_package(
     nav_msgs
     pluginlib
     roscpp
-    tf2_ros
+    tf
 )
 
 include_directories(
@@ -61,11 +60,10 @@ target_link_libraries(planner
   ${catkin_LIBRARIES}
 )
 
-install(TARGETS ${PROJECT_NAME}
-  DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
-
-install(TARGETS planner
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS ${PROJECT_NAME} planner
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}

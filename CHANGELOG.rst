@@ -2,6 +2,9 @@
 Changelog for package fake_localization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.16.5 (2020-03-15)
+-------------------
+
 1.16.4 (2020-03-04)
 -------------------
 * remove signals dep (`#945 <https://github.com/cobalt-robotics/navigation/issues/945>`_)
